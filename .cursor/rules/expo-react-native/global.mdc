@@ -1,0 +1,51 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Conventions globales du projet
+
+1. **Structure et arborescence**  
+   - Respecter l'arborescence décrite dans `folder-conventions.mdc`.  
+   - Ne pas créer de dossiers ad hoc ; chaque nouveau dossier doit correspondre à une catégorie (par exemple `components/`, `hooks/`, `lib/`, etc.).
+
+2. **Typage TypeScript**  
+   - Ne jamais utiliser `any` sans justification.  
+   - Préférer les `type` et `interface` explicites pour toutes les props des composants et pour les réponses API.  
+   - Vérifier que chaque export est correctement typé (fonctions, constantes, objets, etc.).
+
+3. **Lint & Format**  
+   - Respecter les règles ESLint + Prettier configurées (voir `eslint.config.js` et `prettier.config.js`).  
+
+
+4. **Nommage**  
+   - **Fichiers & Dossiers** : camelCase pour les fichiers `.ts/.tsx` (par ex. `useAuth.ts`), kebab-case pour les assets (`logo-icon.png`).  
+   - **Variables/Constantes** : camelCase, avec des préfixes explicites (`isLoading`, `fetchUserData`, etc.).  
+   - **Composants React** : PascalCase (ex. `HomeScreen.tsx`, `UserCard.tsx`).
+
+5. **Documentation interne**  
+   - Ajouter des commentaires JSDoc/TSdoc pour les fonctions utilitaires (voir `lib/utils.ts`).  
+
+ 6.  **Serveur Expo**  
+   - L'IA **ne doit pas** démarrer ou relancer le serveur Expo après modification ; le serveur est supposé être déjà en cours d'exécution dans un terminal séparé.
+
+
+ 7.  **Vérification de typage TypeScript**  
+- Après toute modification importante du code, exécuter la commande suivante pour s'assurer de l'absence d'erreurs de typage : npx tsc --noEmit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

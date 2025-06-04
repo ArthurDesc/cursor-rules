@@ -1,0 +1,44 @@
+---
+description: 
+globs: **/__tests__/**/*.ts,   **/__tests__/**/*.tsx,   **/*.test.ts,   **/*.test.tsx
+alwaysApply: false
+---
+
+
+# Guidelines pour les tests
+
+1. **Organisation des fichiers de test**  
+   - Placer les tests unitaires dans un dossier `__tests__/` au même niveau que le fichier testé, ou nommer directement le fichier `Foo.test.tsx`.  
+   - Exemple :  
+     ```
+     components/
+       Button.tsx
+       __tests__/
+         Button.test.tsx
+     ```
+
+2. **Structure d'un test unitaire**  
+   - Importer uniquement ce qui est nécessaire pour tester (composants, hooks, utilitaires).  
+   - Utiliser `describe()` et `it()`/`test()` pour regrouper les cas.  
+   - Toujours mocker les appels réseau ou d'API via Jest Mock ou un outil adapté.
+
+3. **Coverage et assertions**  
+   - Viser au moins **80 %** de couverture sur les fonctions critiques (composants, hooks de logique métier).  
+   - Préférer les assertions claires (`expect(value).toBe(expected)`, `expect(fn).toHaveBeenCalledTimes(1)`, etc.).  
+   - Pour les composants React Native, utiliser `@testing-library/react-native` pour rendre le composant et interagir sur les éléments.
+
+4. **Tests d'intégration (si nécessaire)**  
+   - Pour tester plusieurs modules assemblés (par ex. appel API + affichage), isoler l'environnement via des mocks et un simulateur (MSW par exemple).  
+   - Garder ces tests dans un dossier `integration/` ou suffixer `*.int.test.ts` pour les différencier.
+
+5. **Nom des tests et messages**  
+   - Les descriptions `describe("Button component", ...)` et `it("renders with correct text", ...)` doivent être explicites.  
+   - Éviter les messages trop vagues (ex. `"vérifie le composant"`).  
+
+6. **Exécution automatique**  
+   - Configurer le script `npm test` pour lancer Jest en mode “watch” (`--watchAll`).  
+   - Avant chaque merge, exécuter `npm run test:ci` (ou équivalent) pour vérifier le build sur la CI.
+
+
+
+

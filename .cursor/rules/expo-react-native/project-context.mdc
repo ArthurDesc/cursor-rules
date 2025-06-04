@@ -1,0 +1,34 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Contexte du projet
+
+Ce fichier sert à documenter progressivement le but, le public cible et l'usage de l'application.  
+Le projet est actuellement en phase de développement technique, les objectifs fonctionnels seront précisés plus tard.
+
+## Stack et dépendances principales
+
+Le projet utilise les technologies et bibliothèques suivantes :
+
+- **React Native** 0.79.2
+- **Expo** 53.x
+- **Expo Router** 5.x
+- **TypeScript**
+- **Tailwind CSS** via **NativeWind**
+- **Zustand** pour la gestion d'état
+- **React Navigation** (via Expo Router)
+- **Prettier** + **ESLint** + **Prettier Plugin TailwindCSS**
+- **@expo/vector-icons**
+- **React Native Reanimated**
+- **React Native Gesture Handler**
+
+- La structure complète du projet est documentée dans le fichier [STRUCTURE.md](mdc:docs/STRUCTURE.md)
+
+
+Ce fichier sera complété ultérieurement avec le but fonctionnel de l'application.
+
+
+
+

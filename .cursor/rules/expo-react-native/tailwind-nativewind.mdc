@@ -1,0 +1,32 @@
+---
+description: 
+globs: **/*.tsx
+alwaysApply: false
+---
+
+# Utilisation de Tailwind + NativeWind
+
+1. **Classes Tailwind uniquement (pas de StyleSheet.create)**  
+   - Ne pas créer de styles via `StyleSheet.create({ ... })`.  
+   - Toujours employer les classes NativeWind directement sur les JSX (`className="p-4 bg-gray-100 rounded-lg"`).
+
+2. **Structure des utilitaires**  
+   - Grouper les classes par fonctionnel (ex. `p-2 m-2` avant les couleurs `bg-blue-500 text-white`).  
+   - Pour les responsive utilities, prioriser les breakpoints NativeWind (`sm:`, `md:`, `lg:`).
+
+3. **Couleurs et thèmes**  
+   - S'appuyer sur la configuration `tailwind.config.js` (taille, palette de couleurs).  
+   - Ne pas hardcoder de codes hex ; utiliser les noms définis dans le fichier de configuration.
+
+4. **Variantes et états**  
+   - Pour les états `hover`, `focus`, `active`, utiliser les classes correspondantes (`hover:bg-blue-600`, `focus:ring-2`).  
+   - Éviter les doublons de classes inutiles.
+
+5. **Performance**  
+   - Filtrer les classes dynamiques dans le JSX pour ne pas générer trop de styles à l'exécution.  
+   - S'assurer que les utilitaires exclus (`purge` dans `tailwind.config.js`) couvrent tous les chemins (`app/**/*.tsx`, `components/**/*.tsx`).
+
+
+
+
+

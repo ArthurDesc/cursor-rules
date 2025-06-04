@@ -1,0 +1,60 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Conventions d'organisation des dossiers
+
+1. **`app/`**  
+   - Contient l'intégralité des pages/routes gérées par Expo Router.  
+   - Toute logique de navigation ou d'affichage d'écrans s'y trouve.
+
+2. **`components/`**  
+   - Regroupe tous les composants réutilisables (UI “pures” ou “smart”) de l'application.  
+   - **Ne pas y mettre de logique métier** : seulement des composants et leurs styles.  
+   - Exemple de structure :  
+     ```
+     components/
+       Button.tsx
+       Header.tsx
+       UserCard.tsx
+     ```
+
+3. **`store/`**  
+   - Contient le fichier principal pour la gestion d'état globale via Zustand (`store.ts`).  
+   - Si tu ajoutes d'autres stores, créer des fichiers dédiés (`authStore.ts`, `uiStore.ts`, etc.).
+
+4. **`hooks/`**  
+   - Pour tous les hooks personnalisés (`useAuth.ts`, `useFetch.ts`, etc.).  
+   - Organiser par domaine si tu as beaucoup de hooks (`hooks/auth/useAuth.ts`, `hooks/data/useFetch.ts`, etc.).
+
+5. **`lib/`**  
+   - Regroupe tous les utilitaires et helpers indépendants de la vue (`api.ts`, `utils.ts`, etc.).  
+   - Par exemple :  
+     ```
+     lib/
+       api.ts            ← appels HTTP (fetch, axios) centralisés
+       utils.ts          ← fonctions pures de manipulation de données
+     ```
+
+6. **`assets/`**  
+   - Pour les images, polices, icônes statiques.  
+   - Sous-arborescences recommandées :  
+     ```
+     assets/
+       images/
+       fonts/
+     ```
+
+7. **`styles/`**  
+   - Contient uniquement les fichiers liés à la configuration de style global (ex. `global.css` pour tailwind/nativewind).  
+   - Ne pas y placer de CSS spécifique à un composant (tout se fait via Tailwind + NativeWind).
+
+8. **Racine du projet**  
+   - Fichiers de configuration (ESLint, Prettier, TypeScript, Babel, Tailwind, Expo).  
+   - `package.json` à la racine.  
+   - Tout fichier `.env` ou `app.json` également à la racine.
+
+
+
+
